@@ -1,0 +1,60 @@
+body {
+	overflow: hidden;
+}
+
+* {
+	cursor: default;
+}
+
+.container {
+	/* don't like how this works, come back to it */
+	position: relative;
+	top:-80px;
+	display:inline-block;
+}
+
+.player-menu {
+	height: 61px;
+	min-width:100% !important;
+	background-color: #F26663;
+}
+
+#sidebar {
+	border-right:1px solid #c8c8c8;
+	box-shadow: -10px 16px 40px black;
+	font-family: "Helvetica Neue";
+	font-weight:500;
+	font-size:12px;
+	padding:10px 0 15px;
+	display:inline-block;
+
+	span {
+		letter-spacing: 1px;
+		padding-left:10px
+	}
+
+	ul {
+		list-style: none;
+		font-size: 12px;
+		padding-top: 5px;
+		margin-left: 0;
+
+		li.active {
+			background-color: #595959;
+			color:white;
+		}
+
+		li {	
+			i {
+				width: 14px;
+			}
+			padding: 3px 3px 3px 20px;
+		}
+		
+	}
+}
+
+#music-data-view {
+	border-bottom:4px solid #c8c8c8;
+	margin:-5px;
+}

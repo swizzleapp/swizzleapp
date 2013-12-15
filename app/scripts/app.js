@@ -12,6 +12,18 @@ angular.module('swizzleApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/music', {
+        templateUrl: 'views/music.html',
+        controller: 'MusicCtrl'
+      })
+      .when('/movies', {
+        templateUrl: 'views/movies.html',
+        controller: 'MoviesCtrl'
+      })
+      .when('/podcasts', {
+        templateUrl: 'views/podcasts.html',
+        controller: 'PodcastsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

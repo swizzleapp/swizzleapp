@@ -27,20 +27,9 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      js: {
-        files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all']
-      },
-      jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'karma']
-      },
-      styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
-      },
-      gruntfile: {
-        files: ['Gruntfile.js']
+      compass: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['compass']
       },
       livereload: {
         options: {
@@ -48,9 +37,12 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
-          '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/views/{,*/}*.html',
+          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
+        ],
+        tasks: ['livereload']
       }
     },
 
@@ -118,7 +110,7 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: ['.tmp', '<%= yeoman.app %>/fonts/font-awesome']
     },
 
     // Add vendor prefixed styles
@@ -134,11 +126,7 @@ module.exports = function (grunt) {
           dest: '.tmp/styles/'
         }]
       }
-    },
-
-    
-
-    
+    },   
 
     // Renames files for browser caching purposes
     rev: {
@@ -237,6 +225,14 @@ module.exports = function (grunt) {
 
     // Copies remaining files to places other tasks can use
     copy: {
+      fontawesome: {
+        files: [{
+          expand: true,
+          flatten: true,
+          dest: '<%= yeoman.app %>/fonts/font-awesome',
+          src: '<%= yeoman.app %>/components/font-awesome/fonts/*',
+        }]
+      },
       dist: {
         files: [{
           expand: true,
@@ -246,7 +242,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
+            'components/**/*',
             'images/{,*/}*.{webp}',
             'fonts/*'
           ]
@@ -298,7 +294,8 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'copy:fontawesome'
       ],
       test: [
         'copy:styles'
@@ -392,7 +389,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
+    //'newer:jshint',
     'test',
     'build'
   ]);

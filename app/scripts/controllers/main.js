@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('swizzleApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, $location) {
+
+  	$scope.activeView = null;
+
+    $scope.go = function go(location) {
+    	$scope.activeView = location;
+    	$location.url(location);
+    };
   });

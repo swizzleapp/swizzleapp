@@ -1,0 +1,66 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\000031}}
+body {
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\000035}}
+* {
+  cursor: default;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\000039}}
+.container {
+  /* don't like how this works, come back to it */
+  position: relative;
+  top: -80px;
+  display: inline-block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000316}}
+.player-menu {
+  height: 61px;
+  min-width: 100% !important;
+  background-color: #F26663;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000322}}
+#sidebar {
+  border-right: 1px solid #c8c8c8;
+  box-shadow: -10px 16px 40px black;
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  font-size: 12px;
+  padding: 10px 0 15px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000331}}
+#sidebar span {
+  letter-spacing: 1px;
+  padding-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000336}}
+#sidebar ul {
+  list-style: none;
+  font-size: 12px;
+  padding-top: 5px;
+  margin-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000342}}
+#sidebar ul li.active {
+  background-color: #595959;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000347}}
+#sidebar ul li {
+  padding: 3px 3px 3px 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000348}}
+#sidebar ul li i {
+  width: 14px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/tjbarber\/Projects\/swizzle\/app\/styles\/player\.scss}line{font-family:\0000357}}
+#music-data-view {
+  border-bottom: 4px solid #c8c8c8;
+  margin: -5px;
+}

@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="swizzleApp" ng-controller="MainCtrl"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,9 +13,11 @@
 
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/fontawesome.css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <!-- endbuild -->
-</head>
-  <body ng-app="swizzleApp">
+  </head>
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,9 +28,23 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="control"></div>
+    <div class="row player-menu">
+      <div class="small-3 large-3 columns"></div>
+      <div class="small-6 large-6 columns"></div>
+      <div class="small-3 large-3 columns"></div>
+    </div>
+    <div id="sidebar" player-sidebar full-height="true" min-width="200">
+      <span>LIBRARY</span>
+      <ul>
+        <li ng-class="{ active: activeView === '/music' }" ng-click="go('/music')"><i class="fa fa-music"></i> Music</li>
+        <li ng-class="{ active: activeView === '/movies' }" ng-click="go('/movies')"><i class="fa fa-youtube-play"></i> Movies</li>
+        <li ng-class="{ active: activeView === '/podcasts' }" ng-click="go('/podcasts')"><i class="fa fa-microphone"></i> Podcasts</li>
+      </ul>
+    </div>
     <div class="container" ng-view=""></div>
 
+    <!-- preminified -->
+    <script src="components/jquery/jquery.min.js"></script>
     <script src="components/angular/angular.js"></script>
 
         <!-- build:js scripts/modules.js -->
@@ -36,11 +52,21 @@
         <script src="components/angular-cookies/angular-cookies.js"></script>
         <script src="components/angular-sanitize/angular-sanitize.js"></script>
         <script src="components/angular-route/angular-route.js"></script>
+        <script src="components/jquery-ui/ui/jquery.ui.core.js"></script>
+        <script src="components/jquery-ui/ui/jquery.ui.widget.js"></script>
+        <script src="components/jquery-ui/ui/jquery.ui.mouse.js"></script>
+        <script src="components/jquery-ui/ui/jquery.ui.resizable.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/player-sidebar.js"></script>
+        <script src="scripts/controllers/music.js"></script>
+        <script src="scripts/controllers/movies.js"></script>
+        <script src="scripts/controllers/podcasts.js"></script>
+        <script src="scripts/directives/column-data-view.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

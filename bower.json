@@ -10,7 +10,9 @@
     "angular-sanitize": "~1.2.0",
     "angular-route": "~1.2.0",
     "foundation": "latest",
-    "font-awesome": "latest"
+    "font-awesome": "latest",
+    "jquery": "latest",
+    "jquery-ui": "latest"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
